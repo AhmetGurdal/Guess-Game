@@ -47,32 +47,36 @@ while True:
 	b=1000
 	ts2=1
 	while True:
-		sa2=random.randrange(a,b)
-		while True:
-			print sa2
-			th=raw_input(":")
-			if th == "y":
-				a=sa2+1
-				ts2=ts2+1
-				break
-			elif th == "a":
-				b =sa2
-				ts2=ts2+1
-				break
-			elif th == "d":
-				
-				print ts2,u"\n tahminde bildim.\n"
-				if ts2>ts:
-					print u"\nbeni geçtin aferin sana.\n" 
-				elif ts2<ts:
-					print u"\nseni geçtim ezik oooooooooooooooo.\n"
-				elif ts2==ts:
-					print u"\nskorlar eşit hadi bakalım.\n"
-				break
+		try:
+			sa2=random.randrange(a,b)
+			while True:
+				print sa2
+				th=raw_input(":")
+				if th == "y":
+					a=sa2+1
+					ts2=ts2+1
+					break
+				elif th == "a":
+					b =sa2
+					ts2=ts2+1
+					break
+				elif th == "d":
+					print ts2,u"\n tahminde bildim.\n"
+					if ts2>ts:
+						print u"\nbeni geçtin aferin sana.\n" 
+					elif ts2<ts:
+						print u"\nseni geçtim ezik oooooooooooooooo.\n"
+					elif ts2==ts:
+						print u"\nskorlar eşit hadi bakalım.\n"
+					break
+				else:
+					print u"\ntahminimi azaltmam gerekirse 'a' ya arttırmam gerekirse 'y' ye \n"
+					print u"\ntahminim doğru ise 'd' ye basman gerekli.\n"
+		except:
+			print u"Hile yapıyosun"
+			break
 		
-			else:
-				print u"\ntahminimi azaltmam gerekirse 'a' ya arttırmam gerekirse 'y' ye \n"
-				print u"\ntahminim doğru ise 'd' ye basman gerekli.\n"
+			
 
 			
 	print u"Bir daha oynamak istiyorsan 'y' ye basman yeterli"
@@ -82,5 +86,3 @@ while True:
 		print u"\nTekrar oynamak istersen ben buradayım.\n"
 		time.sleep(3)
 		quit()
-	
-		
